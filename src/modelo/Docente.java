@@ -25,9 +25,5 @@ public class Docente {
         this.nomDocente = nomDocente;
     }
 
-    @Override
-    public String toString() {
-        return nomDocente;
-    }
 }
 
