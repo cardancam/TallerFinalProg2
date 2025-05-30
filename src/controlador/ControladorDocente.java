@@ -1,4 +1,5 @@
 package controlador;
+import java.util.List;
 import modelo.Docente;
 import vista.VistaDocenteGUI;
 
@@ -19,8 +20,22 @@ public class ControladorDocente {
         return modelo.getNomDocente();
     }
     
-    public void crearDocente(Docente nuevoDocente){
+    public void crearEstudiante(Docente nuevoDocente){
         nuevoDocente.insertarDocente(nuevoDocente);
         System.out.println("Docente creado correctamente!");
+    }
+    
+    public List<Docente> obtenerDocente() {
+        return modelo.obtenerTodosLosDocentes();
+    }
+    
+    public void removerEstudiante(int id){
+        modelo.deleteDocente(id);
+        System.out.println("Docente con id " + id + " eliminado correctamente!");
+    }
+    
+    public void actualizarEstudiante(Docente docente){
+        modelo.updateDocente(docente);
+        System.out.println("Docente actualizado correctamente!");
     }
 }
