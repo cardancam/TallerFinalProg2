@@ -6,6 +6,7 @@ import vista.VistaDocenteGUI;
 public class ControladorDocente {
     private Docente modelo;
     private VistaDocenteGUI vista;
+    
 
     public ControladorDocente(Docente modelo, VistaDocenteGUI vista) {
         this.modelo = modelo;
