@@ -8,6 +8,8 @@ public class TallerMVC {
 
     public static void main(String[] args) {
         Docente.obtenerTodosLosDocentes();
-        Docente.insertarDocente(docente);
+        Docente.deleteDocente(103);
+        
+        
     }    
 }

@@ -68,37 +68,34 @@ public class Docente {
 
         return listaDocentes;
     }
-//
-//    public static void deleteDocente(int idDocente) { //aqui voy actualizando************
-//        Connection conexion = ConexionDatabase.getConnection();
-//        String sql = "DELETE FROM estudiante WHERE id = ?";
-//
-//        try (PreparedStatement statement = conexion.prepareStatement(sql)) {
-//            statement.setInt(1, idEstudiante);
-//
-//            // INSERT, UPDATE, DELETE
-//            statement.executeUpdate();
-//
-//        } catch (Exception error) {
-//            error.printStackTrace();
-//        }
-//    }
-//
-//    public static void updateEstudiante(Estudiante estudiante) {
-//        Connection conexion = ConexionDatabase.getConnection();
-//        String sql = "UPDATE estudiante SET nombre = ?, edad = ? WHERE id = ?";
-//
-//        try (PreparedStatement statement = conexion.prepareStatement(sql)) {
-//            statement.setString(1, estudiante.getNombre());
-//            statement.setInt(2, estudiante.getEdad());
-//            statement.setInt(3, estudiante.getId());
-//
-//            // INSERT, UPDATE, DELETE
-//            statement.executeUpdate();
-//
-//        } catch (Exception error) {
-//            error.printStackTrace();
-//        }
-//    }
+    public static void deleteDocente(int idDocente) {
+        Connection conexion = ConexionDB.getConnection();
+        String sql = "DELETE FROM \"AdminAcademica\".docentes WHERE cod_docente = ?";
+
+        try (PreparedStatement statement = conexion.prepareStatement(sql)) {
+            statement.setInt(1, idDocente);
+
+            // INSERT, UPDATE, DELETE
+            statement.executeUpdate();
+
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
+    }
+    public static void updateDocente(Docente docente) {
+        Connection conexion = ConexionDB.getConnection();
+        String sql = "UPDATE estudiante SET nombre = ? WHERE id = ?";
+
+        try (PreparedStatement statement = conexion.prepareStatement(sql)) {
+            statement.setString(1, docente.getNomDocente());
+            statement.setInt(2, docente.getCodDocente());
+
+            // INSERT, UPDATE, DELETE
+            statement.executeUpdate();
+
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
+    }
 }
 
