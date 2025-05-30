@@ -1,35 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package vista;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-
-public class VistaDocente extends JFrame {
-    public JTextField txtNombre;
-    public JButton btnAgregar;
-    public JTable tabla;
-    public DefaultTableModel modeloTabla;
-
-    public VistaDocente() {
-        setTitle("Gestión de Docentes");
-        setSize(500, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
-
-        
-        JPanel panelTop = new JPanel(new FlowLayout());
-        txtNombre = new JTextField(20);
-        btnAgregar = new JButton("Agregar");
-        panelTop.add(new JLabel("Nombre:"));
-        panelTop.add(txtNombre);
-        panelTop.add(btnAgregar);
-
-        
-        modeloTabla = new DefaultTableModel(new String[]{"Código", "Nombre"}, 0);
-        tabla = new JTable(modeloTabla);
-        JScrollPane scroll = new JScrollPane(tabla);
-
-        add(panelTop, BorderLayout.NORTH);
-        add(scroll, BorderLayout.CENTER);
+import java.util.List;
+import modelo.Docente;
+public class VistaDocente {
+    public void mostrarTodosLosEstudiantes(List<Docente> docentes) {
+    for (Docente e : docentes) {
+        System.out.println("Codigo: " + e.getCodDocente()+ ", Edad: " + e.getNomDocente());
     }
+}
 }

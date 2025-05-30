@@ -2,11 +2,12 @@ package controlador;
 
 import modelo.ConexionDB;
 import modelo.Docente;
+import vista.VistaDocente;
 
 public class TallerMVC {
 
     public static void main(String[] args) {
-        ConexionDB.getConnection();
-    }
-    
+        Docente.obtenerTodosLosDocentes();
+        Docente.insertarDocente(docente);
+    }    
 }
